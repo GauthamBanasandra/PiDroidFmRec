@@ -26,8 +26,8 @@ func GetCommands(actions []jsonReader.ActionElement) (commands []string) {
 	for _, action := range actions {
 		switch cmd := strings.TrimSpace(action.Cmd); cmd {
 		case "tap":
-			commands = append(commands, cmdPrefix + cmd + " " + strconv.Itoa(action.Input.X) + " " +
-				strconv.Itoa(action.Input.Y))
+			commands = append(commands, cmdPrefix + cmd + " " + strconv.Itoa(action.Input.X1) + " " +
+				strconv.Itoa(action.Input.Y1))
 		case "text":
 			commands = append(commands, cmdPrefix + cmd + " " + action.Input.Text)
 		}

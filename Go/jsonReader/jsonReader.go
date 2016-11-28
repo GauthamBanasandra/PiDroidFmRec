@@ -20,8 +20,10 @@ type ActionElement struct {
 }
 
 type InputType struct {
-	X    int `json:"x"`       // For tap event x co-ordinate.
-	Y    int `json:"y"`       // For tap event y co-ordinate.
+	X1   int `json:"x1"`      // For tap event x1 co-ordinate.
+	Y1   int `json:"y1"`      // For tap event y1 co-ordinate.
+	X2   int `json:"x2"`      // For tap event x2 co-ordinate.
+	Y2   int `json:"y2"`      // For tap event y2 co-ordinate.
 	Text string `json:"text"` // For text event input string.
 }
 
