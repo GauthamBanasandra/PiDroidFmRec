@@ -10,6 +10,7 @@ import (
 type Config struct {
 	Action []ActionElement `json:"action"`	// The array of actions is executed sequentially.
 	Ip     string `json:"ip"`	// IP address of the Android device.
+	CmdDelay int `json:"cmdDelay"`	// Delay (in seconds) between executing each action.
 }
 
 type ActionElement struct {
@@ -20,6 +21,7 @@ type ActionElement struct {
 type InputType struct {
 	X int `json:"x"`	// For tap event x co-ordinate.
 	Y int `json:"y"`	// For tap event y co-ordinate.
+	Text string `json:"text"`	// For text event input string.
 }
 
 // Function to read the config.json file
