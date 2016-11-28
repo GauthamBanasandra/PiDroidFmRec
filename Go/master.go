@@ -2,10 +2,10 @@ package main
 
 import (
 	"./jsonReader"
-	"fmt"
+	"./deviceController"
 )
 
 func main() {
 	config := jsonReader.ReadJson("config.json")
-	fmt.Println(config.CmdDelay)
+	deviceController.UnlockDevice(config.Ip, config.DevicePwd)
 }
