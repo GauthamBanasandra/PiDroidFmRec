@@ -8,21 +8,21 @@ import (
 
 // Defining the JSON configuration structure
 type Config struct {
-	Action []ActionElement `json:"action"`	// The array of actions is executed sequentially.
-	Ip     string `json:"ip"`	// IP address of the Android device.
-	CmdDelay int `json:"cmdDelay"`	// Delay (in seconds) between executing each action.
-	DevicePwd string `json:"devicePwd"`	// Device password. Needed for unlocking the device.
+	Action    []ActionElement `json:"action"` // The array of actions is executed sequentially.
+	Ip        string `json:"ip"`              // IP address of the Android device.
+	CmdDelay  int `json:"cmdDelay"`           // Delay (in seconds) between executing each action.
+	DevicePwd string `json:"devicePwd"`       // Device password. Needed for unlocking the device.
 }
 
 type ActionElement struct {
-	Cmd   string `json:"cmd"`	// Command to execute.
-	Input InputType `json:"input"`	// Input for the command to execute.
+	Cmd   string `json:"cmd"`      // Command to execute.
+	Input InputType `json:"input"` // Input for the command to execute.
 }
 
 type InputType struct {
-	X int `json:"x"`	// For tap event x co-ordinate.
-	Y int `json:"y"`	// For tap event y co-ordinate.
-	Text string `json:"text"`	// For text event input string.
+	X    int `json:"x"`       // For tap event x co-ordinate.
+	Y    int `json:"y"`       // For tap event y co-ordinate.
+	Text string `json:"text"` // For text event input string.
 }
 
 // Function to read the config.json file

@@ -21,8 +21,7 @@ type CommandList struct {
 func UnlockDevice(ip string, password string) {
 	// Creating a channel to display outputs of each command immediately after executing.
 	cmdChannel := make(chan string)
-	commands := CommandList{[]string{cmdConn + ip, cmdWakeUp, cmdUnlock, cmdEnterPwd + password, cmdEnterKey},
-		cmdChannel}
+	commands := CommandList{GetUnlockCommands(ip, password), cmdChannel}
 
 	// Begin executing commands.
 	go executeCmdShell(commands)
