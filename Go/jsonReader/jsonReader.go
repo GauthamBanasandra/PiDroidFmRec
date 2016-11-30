@@ -8,10 +8,13 @@ import (
 
 // Defining the JSON configuration structure
 type Config struct {
-	Action    []ActionElement `json:"action"` // The array of actions is executed sequentially.
-	Ip        string `json:"ip"`              // IP address of the Android device.
-	CmdDelay  int `json:"cmdDelay"`           // Delay (in seconds) between executing each action.
-	DevicePwd string `json:"devicePwd"`       // Device password. Needed for unlocking the device.
+	Action     []ActionElement `json:"action"` // The array of actions is executed sequentially.
+	DeviceInfo DeviceInfo `json:"deviceInfo"`
+}
+
+type DeviceInfo struct {
+	Ip        string `json:"ip"`        // IP address of the Android device.
+	DevicePwd string `json:"devicePwd"` // Device password. Needed for unlocking the device.
 }
 
 type ActionElement struct {
