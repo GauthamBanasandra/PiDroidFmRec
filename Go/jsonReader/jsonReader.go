@@ -9,7 +9,7 @@ import (
 // Defining the JSON configuration structure
 type Config struct {
 	Action     []ActionElement `json:"action"` // The array of actions is executed sequentially.
-	DeviceInfo DeviceInfo `json:"deviceInfo"`
+	DeviceInfo DeviceInfo `json:"deviceInfo"`  // Contains device specific information.
 }
 
 type DeviceInfo struct {
