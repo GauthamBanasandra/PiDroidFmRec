@@ -31,7 +31,7 @@ func GetCommands(actions []jsonReader.ActionElement) (commands []string) {
 		case "text":
 			commands = append(commands, cmdPrefix + cmd + " " + action.Input.Text)
 		case "monkey":
-			commands = append(commands, cmdPrefix + cmd + " -p " + action.Input.PackageName +
+			commands = append(commands, "shell " + cmd + " -p " + action.Input.PackageName +
 				" -c android.intent.category.LAUNCHER 1")
 		}
 	}

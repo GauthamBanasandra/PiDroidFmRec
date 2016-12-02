@@ -5,6 +5,13 @@
             "input": {
                 "packageName":"com.motorola.fmplayer"
             }
+        },
+        {
+            "cmd":"tap",
+            "input":{
+                "x1":535,
+                "y1":1695
+            }
         }
     ],
     "deviceInfo": {
@@ -13,9 +20,9 @@
     },
     "recordInfo": {
         "startTime": {
-            "hh": 23,
-            "mm": 47,
-            "ss": 0
+            "hh": 0,
+            "mm": 2,
+            "ss": 40
         },
         "stopTime": {
             "hh": 7,
