@@ -30,6 +30,9 @@ func GetCommands(actions []jsonReader.ActionElement) (commands []string) {
 				strconv.Itoa(action.Input.Y1))
 		case "text":
 			commands = append(commands, cmdPrefix + cmd + " " + action.Input.Text)
+		case "monkey":
+			commands = append(commands, cmdPrefix + cmd + " -p " + action.Input.PackageName +
+				" -c android.intent.category.LAUNCHER 1")
 		}
 	}
 

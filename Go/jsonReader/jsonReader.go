@@ -23,11 +23,12 @@ type ActionElement struct {
 }
 
 type InputType struct {
-	X1   int `json:"x1"`      // For tap event x1 co-ordinate.
-	Y1   int `json:"y1"`      // For tap event y1 co-ordinate.
-	X2   int `json:"x2"`      // For tap event x2 co-ordinate.
-	Y2   int `json:"y2"`      // For tap event y2 co-ordinate.
-	Text string `json:"text"` // For text event input string.
+	X1          int `json:"x1"`             // For tap event x1 co-ordinate.
+	Y1          int `json:"y1"`             // For tap event y1 co-ordinate.
+	X2          int `json:"x2"`             // For tap event x2 co-ordinate.
+	Y2          int `json:"y2"`             // For tap event y2 co-ordinate.
+	Text        string `json:"text"`        // For text event input string.
+	PackageName string `json:"packageName"` // Package name of the app to be launched.
 }
 
 // Function to read the config.json file

@@ -1,21 +1,27 @@
 {
     "action": [
         {
-            "cmd": "tap",
+            "cmd": "monkey",
             "input": {
-                "x1": 20,
-                "y1": 40
-            }
-        },
-        {
-            "cmd": "text",
-            "input": {
-                "text": "28091995"
+                "packageName":"com.motorola.fmplayer"
             }
         }
     ],
     "deviceInfo": {
-        "ip": "192.168.0.2",
+        "ip": "192.168.0.3",
         "devicePwd": "28091995"
+    },
+    "recordInfo": {
+        "startTime": {
+            "hh": 5,
+            "mm": 0,
+            "ss": 0
+        },
+        "stopTime": {
+            "hh": 7,
+            "mm": 0,
+            "ss": 0
+        },
+        "recordFileName": "Devotional hour 91.9"
     }
 }

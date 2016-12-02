@@ -1,7 +1,6 @@
 package deviceController
 
 import (
-	"../jsonReader"
 	"fmt"
 	"os/exec"
 	"os"
@@ -19,16 +18,7 @@ type CommandList struct {
 
 // Unlocks the Android device given the IP address and password.
 func UnlockDevice(ip string, password string) {
-	// Creating a channel to display outputs of each command immediately after executing.
-	cmdChannel := make(chan string)
-	commands := CommandList{GetUnlockCommands(ip, password), cmdChannel}
-
-	// Begin executing commands.
-	go executeCmdShell(commands)
-	for c := range cmdChannel {
-		// Print the intermediate outputs.
-		fmt.Println(c)
-	}
+	ExecuteCommands(GetUnlockCommands(ip, password))
 }
 
 /*
@@ -66,6 +56,18 @@ func executeCmdShell(cmd interface{}) string {
 	return output
 }
 
-func ExecuteActions(actions []jsonReader.ActionElement) {
+
+// Executes a list of commands.
+func ExecuteCommands(commands []string) {
+	// Creating a channel to display outputs of each command immediately after executing.
+	cmdChannel := make(chan string)
+	cmdList := CommandList{commands, cmdChannel}
+
+	// Begin executing commands.
+	go executeCmdShell(cmdList)
+	for c := range cmdChannel {
+		// Print the intermediate outputs.
+		fmt.Println(c)
+	}
 
 }
