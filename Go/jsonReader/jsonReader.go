@@ -10,6 +10,7 @@ import (
 type Config struct {
 	Action     []ActionElement `json:"action"` // The array of actions is executed sequentially.
 	DeviceInfo DeviceInfo `json:"deviceInfo"`  // Contains device specific information.
+	RecordInfo RecordInfo `json:"recordInfo"`  // Contains configuration information regarding recording.
 }
 
 type DeviceInfo struct {
@@ -29,6 +30,18 @@ type InputType struct {
 	Y2          int `json:"y2"`             // For tap event y2 co-ordinate.
 	Text        string `json:"text"`        // For text event input string.
 	PackageName string `json:"packageName"` // Package name of the app to be launched.
+}
+
+type RecordInfo struct {
+	StartTime      Time `json:"startTime"`        // Start recording FM at this time.
+	StopTime       Time `json:"stopTime"`         // Stop recording FM at this time.
+	RecordFileName string `json:"recordFileName"` // File name of the recorded file.
+}
+
+type Time struct {
+	Hh int `json:"hh"` // Hours.
+	Mm int `json:"mm"` // Minutes.
+	Ss int `json:"ss"` // Seconds.
 }
 
 // Function to read the config.json file
