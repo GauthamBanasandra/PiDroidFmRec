@@ -5,6 +5,7 @@ import (
 	"os/exec"
 	"os"
 	"strings"
+	"time"
 )
 
 /*
@@ -47,6 +48,8 @@ func executeCmdShell(cmd interface{}) string {
 			if err != nil {
 				os.Stderr.WriteString("error executing command " + err.Error())
 			}
+			// Delay between commands.
+			time.Sleep(2 * time.Second)
 			// Write each output to the channel.
 			channel <- string(output)
 		}
