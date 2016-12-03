@@ -1,0 +1,55 @@
+{
+    "action": [
+        {
+            "cmd": "monkey",
+            "input": {
+                "packageName": "com.motorola.fmplayer"
+            }
+        },
+        {
+            "cmd": "tap",
+            "input": {
+                "x1": 535,
+                "y1": 1695
+            }
+        },
+        {
+            "cmd": "text",
+            "input": {
+                "text": "Devotional hour 91.9 3"
+            }
+        },
+        {
+            "cmd": "keyevent",
+            "input": {
+                "key": 66
+            }
+        }
+    ],
+    "deviceInfo": {
+        "ip": "192.168.0.2",
+        "devicePwd": "28091995"
+    },
+    "recordInfo": {
+        "startTime": {
+            "hh": 21,
+            "mm": 23,
+            "ss": 50
+        },
+        "stopTime": {
+            "hh": 21,
+            "mm": 28,
+            "ss": 0
+        },
+        "startActionIdx": [
+            0,
+            1
+        ],
+        "stopActionIdx": [
+            1,
+            2,
+            3,
+            3
+        ]
+    }
+}
