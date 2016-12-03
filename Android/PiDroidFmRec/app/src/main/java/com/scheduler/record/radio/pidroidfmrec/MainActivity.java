@@ -71,10 +71,14 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        switch(item.getItemId())
+        switch (item.getItemId())
         {
             case R.id.list_installed_apps:
                 startActivity(new Intent(MainActivity.this, ListInstalledAppsActivity.class));
+                return true;
+            case R.id.show_device_ip:
+                ShowIpDialog ipDialog = new ShowIpDialog();
+                ipDialog.show(getFragmentManager(), TAG);
                 return true;
         }
         return true;

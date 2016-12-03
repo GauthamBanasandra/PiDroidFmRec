@@ -69,6 +69,10 @@ public class ListInstalledAppsActivity extends AppCompatActivity
             case R.id.set_wake_up:
                 startActivity(new Intent(ListInstalledAppsActivity.this, MainActivity.class));
                 return true;
+            case R.id.show_device_ip:
+                ShowIpDialog ipDialog = new ShowIpDialog();
+                ipDialog.show(getFragmentManager(), TAG);
+                return true;
         }
         return true;
     }

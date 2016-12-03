@@ -8,4 +8,8 @@
         android:id="@+id/list_installed_apps"
         android:orderInCategory="100"
         android:title="Installed apps"/>
+    <item
+        android:id="@+id/show_device_ip"
+        android:orderInCategory="100"
+        android:title="Device IP"/>
 </menu>
