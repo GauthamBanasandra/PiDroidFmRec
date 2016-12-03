@@ -1,10 +1,16 @@
 package com.scheduler.record.radio.pidroidfmrec;
 
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -20,7 +26,12 @@ public class ListInstalledAppsActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        // Remove title bar.
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        // Remove notification bar.
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_list_installed_apps);
+
         TableLayout tableLayout = (TableLayout) findViewById(R.id.tableLayout_table);
 
         final PackageManager pm = getPackageManager();
@@ -40,6 +51,26 @@ public class ListInstalledAppsActivity extends AppCompatActivity
 
             tableLayout.addView(tableRow);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.options_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch(item.getItemId())
+        {
+            case R.id.set_wake_up:
+                startActivity(new Intent(ListInstalledAppsActivity.this, MainActivity.class));
+                return true;
+        }
+        return true;
     }
 
     @NonNull
