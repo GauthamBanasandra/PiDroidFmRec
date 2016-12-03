@@ -4,30 +4,31 @@ import (
 	"./jsonReader"
 	"./deviceController"
 	"./scheduler"
-	"fmt"
 )
 
 func main() {
 	config := jsonReader.ReadJson("config.json")
 
-	actions := deviceController.GetCommands(config.Action)
+	startActions, stopActions := config.GetActionList()
 
 	var startInfo = &scheduler.ScheduleAction{
 		Time:config.RecordInfo.StartTime,
 		Action:func() {
 			deviceController.UnlockDevice(config.DeviceInfo.Ip, config.DeviceInfo.DevicePwd)
-			deviceController.ExecuteCommands(actions[:2])
+			deviceController.ExecuteCommands(deviceController.GetCommands(startActions))
 		},
 	}
 
 	var stopInfo = &scheduler.ScheduleAction{
 		Time:config.RecordInfo.StopTime,
 		Action:func() {
-			fmt.Println("Recording stopped")
+			deviceController.UnlockDevice(config.DeviceInfo.Ip, config.DeviceInfo.DevicePwd)
+			deviceController.ExecuteCommands(deviceController.GetCommands(stopActions))
 		},
 	}
 
 	start, stop := scheduler.ScheduleRecording(*startInfo, *stopInfo)
 	<-start
 	<-stop
+
 }

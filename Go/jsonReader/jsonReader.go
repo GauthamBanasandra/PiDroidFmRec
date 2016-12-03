@@ -30,12 +30,14 @@ type InputType struct {
 	Y2          int `json:"y2"`             // For tap event y2 co-ordinate.
 	Text        string `json:"text"`        // For text event input string.
 	PackageName string `json:"packageName"` // Package name of the app to be launched.
+	Key         int `json:"key"`            // Keyevents for the phone - simulating press of a button.
 }
 
 type RecordInfo struct {
-	StartTime      Time `json:"startTime"`        // Start recording FM at this time.
-	StopTime       Time `json:"stopTime"`         // Stop recording FM at this time.
-	RecordFileName string `json:"recordFileName"` // File name of the recorded file.
+	StartTime      Time `json:"startTime"`       // Start recording FM at this time.
+	StopTime       Time `json:"stopTime"`        // Stop recording FM at this time.
+	StartActionIdx []int `json:"startActionIdx"` // Indices of the actions to be executed on start.
+	StopActionIdx  []int `json:"stopActionIdx"`  // Indices of the actions to be executed on stop.
 }
 
 type Time struct {
@@ -59,5 +61,20 @@ func ReadJson(filePath string) (config Config) {
 	}
 
 	configFile.Close()
+	return
+}
+
+func getList(actionElements []ActionElement, indices []int) (subList []ActionElement) {
+	for _, i := range indices {
+		subList = append(subList, actionElements[i])
+	}
+
+	return
+}
+
+func (config Config) GetActionList() (startActionList, stopActionList []ActionElement) {
+	startActionList = getList(config.Action, config.RecordInfo.StartActionIdx)
+	stopActionList = getList(config.Action, config.RecordInfo.StopActionIdx)
+
 	return
 }

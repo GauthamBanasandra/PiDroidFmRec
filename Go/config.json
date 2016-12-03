@@ -16,8 +16,13 @@
         {
             "cmd": "text",
             "input": {
-                "text": "Devotional hour 91.9",
-                "suffixTime": true
+                "text": "Devotional hour 91.9 3"
+            }
+        },
+        {
+            "cmd": "keyevent",
+            "input": {
+                "key": 66
             }
         }
     ],
@@ -27,15 +32,24 @@
     },
     "recordInfo": {
         "startTime": {
-            "hh": 9,
-            "mm": 7,
-            "ss": 0
+            "hh": 21,
+            "mm": 23,
+            "ss": 50
         },
         "stopTime": {
-            "hh": 9,
-            "mm": 10,
+            "hh": 21,
+            "mm": 28,
             "ss": 0
         },
-        "recordFileName": "Devotional hour 91.9"
+        "startActionIdx": [
+            0,
+            1
+        ],
+        "stopActionIdx": [
+            1,
+            2,
+            3,
+            3
+        ]
     }
 }
