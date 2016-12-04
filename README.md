@@ -43,7 +43,7 @@ The host for running the Go code (computer) is connected to the Android device o
 As mentioned earlier, all that the user must do is fill out the configuration file and the Go framework will translate the configuration into adb commands and execute them accordingly. [Click here](https://github.com/GauthamBanasandra/PiDroidFmRec/blob/master/Go/config.json) for configuration sample.<br/>
 
 The configuration comprises of 3 main parts - <br/>
-1. **deviceInfo** (Device information) - <br/>
+1) **deviceInfo** (Device information) - <br/>
 Contains the configuration regarding the **IP** address of the device and the **device password** needed to unlock the phone.
 ```
 "deviceInfo": {
@@ -53,7 +53,7 @@ Contains the configuration regarding the **IP** address of the device and the **
 ```
 
 
-2. **action** - <br/>
+2) **action** - <br/>
 A list of actions that needs to be executed on the Android device. Each action consists of a **cmd** (command) and its **input**.
 ```
 "action": [
@@ -89,7 +89,7 @@ To show the co-ordinates of the tap on the Android device, go to -
 >Settings > Developer options > Pointer location
 
 
-3. **recordInfo** (Record information) - <br/>
+3) **recordInfo** (Record information) - <br/>
 Contains information for recording FM. <br/>
 Recording will be scheduled to begin **startTime** and end at **stopTime**. The times must be specified in 24 hour clock format only. Alarms are scheduled to trigger at both these times and the corresponding actions specified by **startActionIdx** and **stopActionIdx** will be executed.<br/>
 The actions listed under **action** in the configuration will be executed according to the order specified by the **startActionIdx** and **stopActionIdx**. A Zero-based indexing is followed.
@@ -119,7 +119,7 @@ The actions listed under **action** in the configuration will be executed accord
 ```
 ### External components
 This project includes a companion Android app.<br/>
-**Features**
+**Features**<br/>
 1. Depending on the Android device, unlocking it via adb takes nearly a minute to execute. The Android app in this project has a functionality to schedule the device to wake up at a particular time. <br/>
 2. The app lists the name and the corresponding package names of all the apps installed on the device, which could be used in writing the configuration. <br/>
 3. The app displays the IP address of the device. <br/>
