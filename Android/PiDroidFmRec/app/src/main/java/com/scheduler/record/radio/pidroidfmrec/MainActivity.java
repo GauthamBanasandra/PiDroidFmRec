@@ -10,6 +10,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -55,6 +58,30 @@ public class MainActivity extends AppCompatActivity
                 set_wake_up(timePickerWakeUp.getHour(), timePickerWakeUp.getMinute(), 0);
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.options_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case R.id.list_installed_apps:
+                startActivity(new Intent(MainActivity.this, ListInstalledAppsActivity.class));
+                return true;
+            case R.id.show_device_ip:
+                ShowIpDialog ipDialog = new ShowIpDialog();
+                ipDialog.show(getFragmentManager(), TAG);
+                return true;
+        }
+        return true;
     }
 
     private void get_admin_permission()
