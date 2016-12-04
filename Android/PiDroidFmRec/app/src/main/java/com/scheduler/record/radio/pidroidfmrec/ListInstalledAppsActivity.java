@@ -39,6 +39,10 @@ public class ListInstalledAppsActivity extends AppCompatActivity
         List<PackageInfo> packages = pm.getInstalledPackages(PackageManager.GET_PERMISSIONS);
 
         assert tableLayout != null;
+        /*
+        For each app, get the package name and its corresponding app name add it to the
+        table view.
+        */
         for (PackageInfo packageInfo : packages)
         {
             TableRow tableRow = new TableRow(this);
@@ -64,7 +68,7 @@ public class ListInstalledAppsActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        switch(item.getItemId())
+        switch (item.getItemId())
         {
             case R.id.set_wake_up:
                 startActivity(new Intent(ListInstalledAppsActivity.this, MainActivity.class));

@@ -40,9 +40,12 @@ public class MainActivity extends AppCompatActivity
         final TimePicker timePickerWakeUp = (TimePicker) findViewById(R.id.timePicker_wake_up);
         Button buttonSet = (Button) findViewById(R.id.button_set);
 
+        // Getting handlers for managing device's power.
         DevicePolicyManager deviceManger = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
         ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
         compName = new ComponentName(this, AdminReceiver.class);
+
+        // Launch the activity to get admin permission.
         get_admin_permission();
 
         assert buttonSet != null;
