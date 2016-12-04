@@ -38,7 +38,7 @@ The host for running the Go code (computer) is connected to the Android device o
 >```
 >The above procedure must be done everytime the Android device restarted.
 
-
+##
 ### Using the framework
 As mentioned earlier, all that the user must do is fill out the configuration file and the Go framework will translate the configuration into adb commands and execute them accordingly. [Click here](https://github.com/GauthamBanasandra/PiDroidFmRec/blob/master/Go/config.json) for configuration sample.<br/>
 
@@ -117,6 +117,7 @@ The actions listed under **action** in the configuration will be executed accord
         ]
     }
 ```
+##
 ### External components
 This project includes a companion Android app.<br/>
 **Features**<br/>
