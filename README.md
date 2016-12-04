@@ -1,6 +1,9 @@
 # PiDroidFmRec
 PiDroidFmRec is a **Go** framework for recording FM on **Android** devices.<br/>
 
+### Demo
+See PiDroidFmRec in action - [Click here](https://youtu.be/Iyr6LdOXdpk)
+
 ### How does it work?
 1. Android exposes a command-line tool **"[adb](https://developer.android.com/studio/command-line/adb.html)"**. <br/>
 2. Adb is used to send input events to the phone such as tapping on an (x, y) location, sending text input, pressing a key and so on. <br/>
