@@ -52,6 +52,7 @@ Contains the configuration regarding the **IP** address of the device and the **
     }
 ```
 
+
 2. **action** - <br/>
 A list of actions that needs to be executed on the Android device. Each action consists of a **cmd** (command) and its **input**.
 ```
@@ -86,6 +87,7 @@ A list of actions that needs to be executed on the Android device. Each action c
 [Click here](https://developer.android.com/studio/command-line/adb.html#issuingcommands) for the complete list of adb commands (Please note that all the adb commands are not supported by the framework currently).<br/>
 To show the co-ordinates of the tap on the Android device, go to -
 >Settings > Developer options > Pointer location
+
 
 3. **recordInfo** (Record information) - <br/>
 Contains information for recording FM. <br/>
