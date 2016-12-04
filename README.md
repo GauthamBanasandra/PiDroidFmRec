@@ -2,7 +2,7 @@
 PiDroidFmRec is a **Go** framework for recording FM on **Android** devices.<br/>
 
 ### Demo
-See PiDroidFmRec in action - [Click here](https://youtu.be/Iyr6LdOXdpk)
+See PiDroidFmRec in action - [Click here](https://youtu.be/Iyr6LdOXdpk).
 
 ### How does it work?
 1. Android exposes a command-line tool **"[adb](https://developer.android.com/studio/command-line/adb.html)"**. <br/>
@@ -122,7 +122,7 @@ The actions listed under **action** in the configuration will be executed accord
 ```
 ##
 ### External components
-This project includes a companion Android app.<br/>
+This project includes a companion Android app. Download it from [here](https://1drv.ms/u/s!AkcF8UU5QcfihdEox-Lnyi8OWdOA2w).<br/>
 **Features**<br/>
 1. Depending on the Android device, unlocking it via adb takes nearly a minute to execute. The Android app in this project has a functionality to schedule the device to wake up at a particular time. <br/>
 2. The app lists the name and the corresponding package names of all the apps installed on the device, which could be used in writing the configuration. <br/>
